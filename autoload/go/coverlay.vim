@@ -119,7 +119,7 @@ function! go#coverlay#Coverlay(...)
     let l:tmpname=tempname()
 
     "TODO: add -coverpkg options based on current buf list
-    let out = go#cmd#Test(1, 0, "-coverprofile=".l:tmpname)
+    let out = go#cmd#Test(1, 0, "-short", "-coverprofile=".l:tmpname)
 
     if !v:shell_error
         call go#coverlay#overlay(l:tmpname)
